@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD Student in Machine Learning (Fall 2024 - )
+subtitle: PhD Candidate in Machine Learning (Fall 2024 - )
 
 profile:
   align: right

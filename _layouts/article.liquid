@@ -1,0 +1,50 @@
+---
+layout: default
+---
+<style>
+  .article-cta {
+    display: inline-block;
+    color: var(--global-text-color);
+    border: 1px solid var(--global-text-color);
+    border-radius: 0.25rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .article-cta:hover {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    text-decoration: none;
+  }
+</style>
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      {% if page.date %}{{ page.date | date: '%B %-d, %Y' }}{% endif %}
+      {% if page.venue %} &middot; {{ page.venue }}{% endif %}
+    </p>
+    {% if page.description %}
+      <p class="post-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+    {{ content }}
+
+    {% if page.external_url %}
+      <p class="mt-4">
+        <a
+          class="article-cta"
+          role="button"
+          href="{{ page.external_url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ page.external_label | default: 'read full article' }}
+        </a>
+      </p>
+    {% endif %}
+  </article>
+</div>
